@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birthday Countdown</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+</head>
+<body>
+
+<div class="w3-display-container" style="margin-bottom:50px">
+  <img src="info_app/beach3.jpg" style="width:100%">
+  <div class="w3-display-bottomleft w3-container w3-amber w3-hover-orange w3-hide-small"
+   style="bottom:10%;opacity:0.7;width:70%">
+  <div class="w3-container">
+    <h2>We offer birthday incentive Nicole!</h2>
+    <p id="countdown"></p>
+  </div>
+
+  <script>
+    // Set your birthdate (replace with your actual birthdate)
+    var birthday = new Date("2005-09-24");
+
+    function updateCountdown() {
+        // Get today's date
+        var today = new Date();
+
+        // Set the next birthday year to the current year if birthday has passed this year
+        if (today.getTime() > birthday.getTime()) {
+            birthday.setFullYear(today.getFullYear() + 1);
+        }
+
+        // Calculate the time difference between today and the next birthday
+        var timeDifference = birthday.getTime() - today.getTime();
+
+        // Calculate weeks, days, hours, minutes, and seconds
+        var weeks = Math.floor(timeDifference / (1000 * 60 * 60 * 24 * 7));
+        var days = Math.floor((timeDifference % (1000 * 60 * 60 * 24 * 7)) / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((timeDifference % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var minutes = Math.floor((timeDifference % (1000 * 60 * 60)) / (1000 * 60));
+        var seconds = Math.floor((timeDifference % (1000 * 60)) / 1000);
+
+        // Output the countdown
+        var countdownElement = document.getElementById("countdown");
+        countdownElement.innerHTML = "There are " + weeks + " weeks, " + days + " days, " + hours + " hours, " + minutes + " minutes, and " + seconds + " seconds until my next birthday!";
+    }
+
+    // Update the countdown every second
+    setInterval(updateCountdown, 1000);
+
+    // Initial update
+    updateCountdown();
+</script>
+</div>
+</div>
+
+<div class="w3-row w3-container" style="margin:50px 0">
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-amber">
+    <img src="info_app/gJyM50.jpg" style="width:100%">
+    <h2>Smart Vacation</h2>
+    <p>Full vacation control from your cell phone.</p>
+  </div>
+</div>
+
+<div class="w3-half w3-container">
+  <div class="w3-topbar w3-border-amber">
+    <img src="info_app/gJyM50.jpg" style="width:100%">
+    <h2>Super Offers</h2>
+    <p>Up to 50% offers. Always 25% student offers.</p>
+  </div>
+</div>
+</div>
+
+</body>
+</html>
